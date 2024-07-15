@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { ReasonPhrases, StatusCodes } from "http-status-codes";
 import TodoModel from "../../database/models/TodoModel";
+import { IMarkTodoBody } from "../../interfaces/routes/todos/TodoRequestTypes";
 
 const TodosRouter = Router();
 
@@ -28,7 +29,7 @@ TodosRouter.get("/all", async (req, res) => {
 // PUT REQUESTS
 TodosRouter.put("/mark", async (req, res) => {
   try {
-    const { todoId, newIsDone } = req.body;
+    const { todoId, newIsDone } = req.body as IMarkTodoBody;
 
     if (!todoId) throw Error("keine User Id");
 
