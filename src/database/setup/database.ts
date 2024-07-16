@@ -1,4 +1,4 @@
-import { Sequelize } from "sequelize";
+import { Sequelize } from 'sequelize';
 
 const { DB_NAME, DB_USERNAME, DB_PASSWORD, DB_HOST } = process.env;
 
@@ -9,8 +9,8 @@ const todoSequelize = new Sequelize(
   DB_PASSWORD,
   {
     host: DB_HOST,
-    dialect: "mysql",
-  }
+    dialect: 'mysql',
+  },
 );
 
 export default todoSequelize;
